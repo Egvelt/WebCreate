@@ -1,9 +1,7 @@
 //フェードイン
 $(function(){ 
-  $('.top img').hide();
-  $('#jp').hide();
-  $('#eg').hide(); 
-  $('#logo').hide();
+  $('.container').hide();
+  $('#menu').hide();
 }); 
 
 var i = 0; 
@@ -18,9 +16,35 @@ function doFade() {
   if (i >= list) { 
       clearInterval(int); 
   } 
-  $('.top img').eq(i).fadeIn(1000); //フェードインの時間
-  $('#jp').eq(i).fadeIn(1000);
-  $('#eg').eq(i).fadeIn(1000);
-  $('#logo').eq(i).fadeIn(1000);
+  $('.container').eq(i).fadeIn(2000); //フェードインの時間
+  $('#menu').eq(i).fadeIn(2000);
   i++; 
-} 
+}
+
+$(function() {
+	setTimeout(function() {
+		for(var i=1; i<=2; i++) {
+			setInterval( "slideShow(" + i + ")", 4000 ); 
+		}
+  },1500);
+});
+
+/* SlideShow */
+function slideShow(i) {
+   var $active = $('#photo' + i + ' img.active');
+
+   if ( $active.length == 0 ) $active = $('#photo' + i + ' img:last');
+
+   var $next =  $active.next().length ? $active.next()
+      : $('#photo' + i + ' img:first');
+
+   $active.addClass('last-active')
+   		.animate({opacity: 0.0},1500);
+
+   $next.css({opacity: 0.0})
+      .addClass('active')
+      .animate({opacity: 1.0}, 1500, function() {
+
+        $active.removeClass('active last-active');
+      });
+}

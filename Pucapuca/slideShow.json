@@ -1,0 +1,19 @@
+{
+	"slideShow": [
+		{
+			"path": "./slide/img1.jpg"
+		},
+		{
+			"path": "./slide/img2.jpg"
+		},
+		{
+			"path": "./slide/img3.jpg"
+		},
+		{
+			"path": "./slide/img4.jpg"
+		},
+		{
+			"path": "./slide/img5.jpg"
+		}
+	]
+}

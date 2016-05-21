@@ -3,18 +3,24 @@
 /** 
  * Wrapper
 **/
+html,body {
+	height: 100%;
+	font-family: "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
 .container {
-	width: 80%;
+	width: 100%;
+	height: 60%;
 	float: right;
 	padding: 0;
 	margin: 0;
-	background-color: gren;
+	overflow: hidden;
 }
-
-#menu {
-	width: 20%;
-	height: 100px;
-	float: left;
+@media (min-width: 769px) {
+	.container {
+		width: 80%;
+		height: 95%
+	}
 }
 
 /**
@@ -24,36 +30,135 @@
 	width: 100%;
 }
 #logo p {
-	margin: 10% 0 2% 29%;
+	margin: 14% 0 6% 5%;
 }
 #logo p img{
-	max-width: 30%;
+	max-width: 32%;
 	height: auto;
 }
-
+@media (min-width: 769px) {
+	#logo p {
+		margin: 7% 0 3% 5%;
+	}
+	#logo p img {
+		max-width: 22%;
+	}
+}
 /**
  * main
 **/
 #main {
 	width: 100%;
-	height: 60%;
+	height: 40%;
 }
-#main .photo {
-	width: 50%;
-	height: auto;
+#main #photo1,
+#main #photo2 {
+	width: 48%;
 	float: left;
+	position: relative;
 }
 #main p img{
-	max-width: 60%;
+	max-width: 90%;
+	position: absolute;
+	margin-left: 8%;
+}
+/* Slide Show */
+#photo1 img,
+#photo2 img {
+	z-index: 8;
+	opacity: 0;
+}
+#photo1 img.active,
+#photo2 img.active {
+	z-index: 10;
+	opacity: 1.0;
+}
+#photo1 img.last-active,
+#photo2 img.last-active {
+   z-index: 9;
+}
+/* tablet media query */
+@media(min-width: 768px) and ( max-width:1023px ) {
+	#main #photo1,
+	#main #photo2 {
+		width: 45%;
+	}
+	#main p img {
+		max-width: 70%;
+		margin-left: 26%;
+	}
+}
+/* PC media query */
+@media(min-width: 1024px) {
+	#main {
+		height: 80%;
+	}
+	#main #photo1,
+	#main #photo2 {
+		width: 40%;
+	}
+	#main p img {
+		max-width: 80%;
+	}
 }
 
 
+/**
+ * Left Side Menu
+**/
+#menu {
+	width: 100%;
+	height: 95%;
+}
+#menu p {
+	text-align: center;
+	margin-top: 70%;
+}
+#menu a {
+	text-decoration: none;
+	font-size: 1.5em;
+	color: #555;
+	transition: all .3s;
+}
+#menu a:hover {
+	font-size: 2em;
+	color: #4169e1;
+}
+@media (min-width: 769px) {
+	#menu {
+		width: 20%;
+		float: left;
+	}
+}
+@media (max-width: 768px) {
+	.primary {
+		width: 50%;
+		float: left;
+	}
+	.secondry {
+		width: 50%;
+		float: right;
+	}
+	#menu {
+		clear: both;
+	}
+	#menu p {
+		margin: 0% 15%;
+	}
+	#menu a {
+		font-size: 1.2em;
+	}
+	#menu a:hover {
+		font-size: 1.4em;
+		color: #4169e1;
+	}
+}
 
 /**
  * footer 
 **/
 #footer {
+	clear: both;
 	width: 100%;
-	height: 10%;
+	height: 5%;
 }
-
