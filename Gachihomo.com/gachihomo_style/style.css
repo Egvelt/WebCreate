@@ -1,0 +1,557 @@
+@charset "utf-8";
+/**********************************
+
+Theme Name: ガチホモ速報のテーマ
+Version: 0.1
+Theme URI: http://gachihomo.com
+Author: ガチホモ管理人
+Author URI: http://gachihomo.com/
+Description: ガチホモ速報のテーマです。
+
+***********************************/
+
+/*****************
+  基本・全体の設定
+*****************/
+body  {
+	font-family: "メイリオ", 'Hiragino Kaku Gothic Pro', sans-serif
+	background-color: #FFFFFF;
+	background-image: url('image/bg_body.png');
+	background-repeat: repeat-x;
+}
+a {
+	text-decoration: none;
+	color: #0c8bcd
+}
+a img {border: none}
+
+/***********
+Header Style
+***********/
+div#header {
+	font-family: "メイリオ",'Trebuchet MS', sans-serif;
+	margin-bottom: 0px;
+	width: 1200px;
+	background-color: #FFFFFF;
+	margin: 0px 0px 0px 0px;
+	padding: 14px 10px 16px 10px;
+	border-top: 1px solid darkgray;
+	border-left: 1px solid darkgray;
+	border-right: 1px solid darkgray;
+	border-bottom: 0px solid darkgray;
+	margin: auto;
+	overflow : hidden; /* float宣言 */
+	box-shadow: 2px 2px 5px #aabbaa;/* css3用記述 */
+	border-radius: 15px 15px 0px 0px / 13px 13px 0px 0px/* css3用記述 */
+}
+/* Logo Image */
+#logo {
+	width: 266px;
+	height: 137px;
+	margin: 0 10px 0 5px;
+	float:left;
+	background: url("./image/Logo_on.png") no-repeat;
+	background-size: 266px 137px;
+}
+#logo a {
+	display: inline-block;
+}
+/* ロゴのロールオーバー設定 */
+#logo a:hover {
+	background-color: transparent; /* IE6対応 */
+}
+#logo a:hover img{
+	opacity: 0;
+}
+#logo a img {
+	transition: opacity 0.5s ease-out;
+}
+
+#headline {
+	width: 860px;
+	height:140px;
+	margin: 4px 0 0 0;
+	float: left;
+	border : solid 1px;
+}
+
+div#header h1  {
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	font-size: 1em;
+	margin: -54px 0px 0px}
+div#header h1 a  {
+	color: #000000
+}
+div#header p#desc a  {
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #333399;
+	float: left;
+	margin: -15px 0px 0px
+}
+div#header p#desc a:hover  {
+	font-size: 1em;
+	font-weight: bold;
+	color: #3333ff;
+	float: left;
+	margin: -15px 0px 0px
+}
+div#rssf { 
+	float: right;
+	margin: -5px 0px 0px 0px
+}
+
+/* ナビゲーションバー */
+#nav  {
+	width: 1200px;
+	position:relative;
+	padding: 0px 10px 0px 0px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	height: 51px;
+	/* background:url("image/bg_menu.png")  0 0 repeat-x; */
+	background-color: #ffffff;
+	border-top: 1px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa; 
+	box-shadow: 2px 1px 5px #aabbaa;/* css3用記述 */
+	margin: auto;
+}
+#nav ul  {
+	margin: 0;
+	padding: 0;
+}
+#nav li  {
+	list-style-type: none;
+	float:left;
+}
+#nav li a  {
+	display: block;
+	width: 200px;
+	line-height: 50px;
+	border-right: solid 1px #aaaaaa;
+	color: #333;
+	text-align: center;
+	transition: all 1s;
+}
+#nav li a:link {
+	text-decoration: none;
+}
+#nav li a:hover  {
+	background-color: #0a90b7;
+	color: #FFF;
+}
+#nav ul ul {
+	font-size: 1em;
+	font-weight: normal;
+	background-color: #ffffff;
+	display: none;
+	position: absolute;
+	border-top: 1px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	text-decoration: none;
+	-moz-opacity:0.85;
+	opacity:0.85;
+	z-index: 99999;
+	width: 170px}
+#nav ul ul.sub-menu :hover > a {
+	background:#eeffff;
+	text-decoration: none;
+	color: #333
+}
+#nav ul ul li {
+	min-width: 170px
+}
+#nav ul ul a {
+	width: 170px;
+	line-height: 40px;
+	border-top: 0px solid #aaaaaa;
+	border-left: 0px solid #aaaaaa;
+	border-right: 0px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	color: #333;
+	text-align: center
+}
+#nav ul ul ul {   left: 100%;
+	top: 0
+}
+#nav ul li:hover > ul {display: block}
+
+/* 検索フォーム */
+div#subinfo {
+	width: 350px;
+	height:	52px;
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+	left: 70%;
+	margin: auto;
+	text-align: right;
+}
+#searchform, #searchform div  {
+	display: inline;
+	margin: 0px 0px 0px 0px
+}
+#searchform label  {
+	display: none;
+	margin: 0px 0px 0px 0px
+}
+#s  {
+	border: solid 1px #aaaaaa;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding: 3px 8px;
+	margin: 0px 0px 0px 0px
+}
+#s:hover, #s:focus  {
+	background-color: #eeeeee
+}
+#searchsubmit  {
+	background-color: #666666;
+	border-radius: 15px;
+	color: #ffffff;
+	border: solid 1px #aaaaaa;
+	padding: 2px 8pxx;
+	margin: 0px 10px 0px 0px
+}
+#searchsubmit:hover  {background-color: #aaaaaa}
+
+/* 検索結果 */
+
+/****************
+Header Style End
+****************/
+
+
+/* コンテンツ コンテナ */
+div#container  {
+	width: 1200px;
+	background-color: #FFFFFF;
+/*	margin: 10px 10px 10px 10px; 
+	padding: 10px 10px 10px 10px; */
+	border-top: 0px solid darkgray;
+	border-left: 1px solid darkgray;
+	border-right: 1px solid darkgray;
+	border-bottom: 1px solid darkgray;
+	margin: auto;
+	box-shadow: 2px 2px 5px #aabbaa;/* css3用記述 */
+	border-radius: 0px 0px 25px 25px / 0px 0px 13px 13px/* css3用記述 */
+}
+
+
+
+/* パンくずリスト */
+div#breadcrumb {
+	width:735px;
+	height:35px;
+	overflow:hidden;
+}
+div#breadcrumb div  {
+	display: inline;
+	margin: 0 5px 0 0;
+	font-size: 1em;
+	float:right;
+}
+
+/* 左と中央カラム領域指定ボックス */
+div#main {  
+	width: 1200px;
+	margin: 10px 0 0 0;
+	text-align: left;
+	float:left;
+}
+
+/* 中央コンテンツ */
+div#content  {  
+	width: 735px;
+	float: left;
+	margin: 5px 3px;
+}
+div#content_image  { 
+	width: 1200px;
+	float: right;
+	margin: 5px 5px 5px 5px
+}
+p.title  {
+	font-size:1.4em;
+	font-weight: bold;
+	line-height: 1.3;
+	color: #585858;
+	width: auto;
+	padding: 0 50px 0 10px;
+	float:left;
+	background-image: url(image/bar.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+p.pagenation  {
+	font-size: 1.2em;
+	overflow: hidden
+}
+span.oldpage  {
+	float: left;
+	margin: 0 0 0 10px;
+}
+span.newpage  {
+	float: right;
+	margin: 0 10px 0 0;
+}
+
+/*********
+   記事
+*********/
+div.post  {
+	margin-bottom: 30px;
+	overflow: hidden
+}
+div.post h2  {
+	background-image: url(image/chip.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	border-top: solid 1px #aaaaaa;
+	border-bottom: solid 1px #aaaaaa;
+	font-size: 1.5em;
+	/* font-weight:bold; */
+	padding: 10px 18px;
+	margin: 0
+}
+div.post h2 a  {
+	color: #000099;
+	margin: 0 0 0 5px;
+}
+div.post h2 a:hover  {
+	background: #f7e29e;
+	padding: 2px 7px 2px 0px
+}
+div.post p  {
+	font-size: 1em;
+	line-height: 1.6}
+div.post p.postcat  {
+	text-align: right;
+	margin: -10px 10px 10px 0}
+div.post p.postcat a  {
+	font-size: smaller;
+	background-color: #a7d043;
+	border-radius: 2px;
+	color: #ffffff;
+	padding: 1px 5px
+}
+div.post p.postcat a:hover  {
+	font-size: smaller;
+	background-color: #d7f063;
+	border-radius: 2px;
+	color: #ffffff;
+	padding: 1px 5px
+}
+/* タグの配置 */
+div.post #info {
+	width:100%;
+	height:auto;
+	font-size: 0.85em;
+}
+div.post #info ul {
+	list-style-type: none;
+	padding:0;
+}
+div.post #info li {
+	float:left;
+}
+/* 投稿日時 */
+div.post p.postinfo  {
+	color: #0c8bcd;
+	margin: 0
+}
+
+/* 記事内の画像 */
+.aligncenter  {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+.alignleft  {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px
+}
+.alignright  {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px
+}
+.wp-caption  {
+	border: solid 1px #aaaaaa;
+	text-align: center;
+	padding-top: 5px
+}
+
+
+/****************
+  　サイドバー
+****************/
+/* 左サイドバー */
+div#sidebar-left{
+	width:215px;
+	margin: 5px 8px 5px 5px;
+	padding:0;
+	float: left;
+}
+div#sidebar-left ul  {
+	width:215px;
+	padding: 0;
+	list-style-type: none
+}
+div#sidebar-left .widget  {
+	margin-bottom: 20px
+}
+div#sidebar-left h2  {
+	font-size: 1em;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #55aa22;
+	border-radius: 3px;
+	padding: 2px 10px;
+	margin: 0;
+}
+div#sidebar-left li li  {
+	font-size: 0.75em;
+	border-bottom: dotted 1px #aaaaaa;
+	margin: 0px 15px 0px 5px;
+}
+div#sidebar-left li li a  {color: #000000;
+	display: block;
+	padding: 5px 10px
+}
+div#sidebar-left li li a:hover  {
+	background-color: #f7e29e
+}
+
+/* 右サイドバー */
+div#sidebar-right {
+	width: 215px;
+	margin: 5px 5px 5px 8px;
+	float: left;
+}
+div#sidebar-right ul  {
+	width:215px;
+	padding: 0;
+	list-style-type: none
+}
+div#sidebar-right .widget  {
+	margin-bottom: 20px;
+}
+div#sidebar-right h2  {
+	font-size: 1em;
+	font-weight         : bold;
+	color: #ffffff;
+	background-color: #55aa22;
+	border-radius: 3px;
+	padding: 2px 10px;
+	margin: 0
+}
+div#sidebar-right li li  {
+	font-size: 0.9em;
+	border-bottom: dotted 1px #aaaaaa;
+	margin: 0px 10px 0px 0px
+}
+div#sidebar-right li li a  {color: #000000;
+	display: block;
+	padding: 5px 10px
+}
+div#sidebar-right li li a:hover  {background-color: #f7e29e
+}
+
+/* ページ番号リンク */
+.tablenav {
+	padding: 0px 7px 2px 7px;
+	color: #2583ad;
+	background:white;
+	margin: 0em auto;
+	line-height:2em;
+	text-align:center
+}
+a.page-numbers, .tablenav .current {
+	color: #00019b;
+	padding: 2px .4em;
+	border:solid 1px #ccc;
+	text-decoration:none;
+	font-size:0.9em
+}
+a.page-numbers:hover {
+	color:white;
+	background: #328ab2
+}
+.tablenav .current {
+	color: white;
+	background: #328ab2;
+	border-color: #328ab2;
+	font-weight:bold
+}
+.tablenav .next, .tablenav .prev {
+	border:0 none;
+	background:transparent;
+	text-decoration:underline;
+	font-size:0.9em;
+	font-weight:bold}
+#ue_page {   margin: 0px 0px -5px 0px
+}
+
+/*****************
+   サムネイル画像 
+*****************/
+div.post p.thumb  {
+	float: left;
+	margin: 0 10px 10px 0
+}
+/* 続きを読む */
+div.post p.more  {
+	margin: 0;
+	font-size: 0.625em
+}
+div.post p.more a  {
+	border: solid 1px #aaaaaa;
+	color: #333333;
+	padding: 3px
+}
+div.post p.more a:hover  {background: #f7e29e}
+ul.post  {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-top: dotted 1px #aaaaaa
+}
+ul.post li  {
+	border-bottom: dotted 1px #aaaaaa;
+	background-image: url(image/chip.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding: 15px 0 15px 20px
+}
+ul.post li a  {color: #000000}
+ul.post li span  {
+	font-size: smaller;
+	color: #888888
+}
+
+/************
+   フッター 
+*************/
+div#footer  {
+	border-top: solid 1px #aaaaaa;
+	padding: 6px 0;
+	clear: both
+}
+div#footer p  {
+	font-size: 0.75em;
+	text-align: center;
+	font-style: normal;
+	font-family: Verdana, sans-serif;
+	margin: 0
+}
+
