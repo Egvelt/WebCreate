@@ -9,14 +9,15 @@
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />  
 	
 	<?php wp_head(); ?>
-	<!-- Google -->
+	
+	<!-- Google
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-5404210392034604",
 		enable_page_level_ads: true
 		});
-	</script>
+	</script>　 -->
 </head>
 	
 <body <?php body_class(); ?>>
@@ -34,6 +35,16 @@
 		</div>
 		<!-- ヘッドライン -->
 		<div id="headline">
+			<?php 
+			$thumbnails = get_posts( 'numberposts=4' );
+			foreach ( $thumbnails as $thumbnail ) {
+				if ( has_post_thumbnail( $thumbnail->ID ) ) {
+					echo '<a href="' . get_permalink( $thumbnail->ID ) . '" title="' . esc_attr( $thumbnail->post_title ) . '">';
+					echo get_the_post_thumbnail( $thumbnail->ID, 'thumbnail' );
+					echo '<span>' . esc_attr( $thumbnail->post_title ) . '';
+					echo '</span></a>';
+				}
+			}?>
 		</div>
 		
 		<div id="rssf">

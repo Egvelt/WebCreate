@@ -1,4 +1,5 @@
-<!-- 　ヘッダーの呼び出し　 -->
+<!-- singel.php
+	 ヘッダーの呼び出し -->
 <?php get_header(); ?>
 
 <div id="main">
@@ -7,6 +8,11 @@
 	
 	<!-- 　記事コンテンツ（中央部分）　 -->
 	<div id="content">
+		
+		<!-- アフィリエイト空間 -->
+		<div id="ad">
+		</div>	
+		
 		<!-- パンくずリスト -->
 		<div id="breadcrumb">
 			<!-- パンくずリスト 記事タイトル-->
@@ -48,8 +54,8 @@
 			<span class="newpage"><?php next_post_link(); ?> </span>
 		</p>
 		<?php endwhile; endif; ?>
-
 		<?php get_template_part('pagenation'); ?>
+		
 	</div>
 	<!-- 　右サイドバー　 -->
 	<?php get_sidebar('right'); ?>
