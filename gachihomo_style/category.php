@@ -9,8 +9,14 @@
 	<div id="content">
 		<!-- パンくずリスト -->
 		<div id="breadcrumb">
+			<!-- 記事見出し -->
+			<p class="title"><?php single_cat_title(); ?></p>
+			
 			<!-- パンくずリスト 記事タイトル-->
-			<div><?php the_title(); ?></div>
+			<div>
+				<?php the_title(); ?>
+			</div>
+			
 			<!-- パンくずリスト 中間カテゴリー　-->
 			<?php $postcat = get_the_category(); ?>
 			<?php $catid = $postcat[0]->cat_ID; ?>
@@ -22,6 +28,7 @@
 			array_pop($allcats);
 			$allcats = array_reverse($allcats); ?>
 			<?php foreach($allcats as $catid): ?>
+			
 			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 				<a href="<?php echo get_category_link($catid); ?>" itemprop="url">
 					<span itemprop="title"><?php echo get_cat_name($catid); ?></span>
@@ -38,17 +45,12 @@
 		</div>
 		<!-- パンくずリスト終了 -->
 		
-		<!-- 記事見出し -->
-		<?php if(have_posts()): while(have_posts()): the_post(); ?>
+		<!-- 本文、記事の読み込み -->
+		<?php if(have_posts()): while(have_posts()):the_post(); ?>
 		<?php get_template_part('content'); ?>
-		
-		<!-- ページネーション -->
-		<p class="pagenation">
-			<span class="oldpage"><?php previous_post_link(); ?></span>
-			<span class="newpage"><?php next_post_link(); ?> </span>
-		</p>
 		<?php endwhile; endif; ?>
 
+		<!-- ページネーション -->
 		<?php get_template_part('pagenation'); ?>
 	</div>
 	<!-- 　右サイドバー　 -->
