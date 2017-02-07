@@ -96,8 +96,12 @@ div#header {
     background-color: #00adff;
     opacity: 0.8;
 }
+<<<<<<< HEAD:gachihomo_style/style.css
 #headline a:hover span,
 #headline a:hover img{
+=======
+#headline a:hover span{
+>>>>>>> 499b58d0090cbe8ae6da99c31400298de7150ddc:Gachihomo.com/gachihomo_style/style.css
     background-color: #ea981e;
     opacity: 0.9;
 }
