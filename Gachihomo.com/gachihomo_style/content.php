@@ -23,8 +23,16 @@
 		<?php endif; ?>
 	</p> 
 	
-	<!-- 　本文　 -->
-	<?php the_content(); ?>
+	<!-- 本文の表示　FALSE= さらに... を削除 -->
+	<?php the_content('',FALSE,''); ?>
+	<!-- 記事の分割関数 -->
+	<?php wp_link_pages( array(
+		'before'      => '<div class="page-links"><span class="page-links-title">《</span>',
+		'after'       => '<span class="page-links-title"> 》</span></div>',
+		'link_before' => '<span class="number">',
+		'link_after'  => '</span>',
+		)
+	); ?>
 	
 	<!-- SHAREボタン -->
 	<div id="sharebtn_bottom" class="sharebtn">

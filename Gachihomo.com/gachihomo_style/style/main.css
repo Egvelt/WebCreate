@@ -1,0 +1,488 @@
+@charset "utf-8";
+
+/*****************
+  基本・全体の設定
+*****************/
+body  {
+	font-family: "メイリオ", 'Hiragino Kaku Gothic Pro',"Helvetica Neue",Helvetica,Arial,sans-serif;
+	background-color: #FFFFFF;
+	background-image: url('../image/bg_body.png');
+	background-repeat: repeat-x;
+}
+a {
+	text-decoration: none;
+	color: #0c8bcd;
+}
+a img {
+	border: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+/***********
+Header Style
+***********/
+div#header {
+	font-family: "メイリオ",'Trebuchet MS', sans-serif;
+	width: 1200px;
+	background-color: #FFFFFF;
+	margin: 0px auto;
+	padding: 14px 10px 16px 15px;
+	border-top: 1px solid darkgray;
+	border-left: 1px solid darkgray;
+	border-right: 1px solid darkgray;
+	border-bottom: 0px solid darkgray;
+	overflow : hidden; /* float宣言 */
+	/* box-shadow: 2px 2px 5px #aabbaa;/* css3用記述 */
+	border-radius: 15px 15px 0px 0px / 13px 13px 0px 0px/* css3用記述 */
+}
+/* Logo Image */
+#logo {
+	width: 23%;
+	height: 137px;
+	margin: 0 10px 0 0px;
+	float:left;
+	background: url("../image/Logo_on.png") no-repeat;
+	background-size: 266px 137px;
+}
+#logo a {
+	display: inline-block;
+}
+/* ロゴのロールオーバー設定 */
+#logo a:hover {
+	background-color: transparent; /* IE6対応 */
+}
+#logo a:hover img{
+	opacity: 0;
+}
+#logo a img {
+	transition: opacity 0.5s ease-out;
+}
+
+/* グリッドヘッドライン */
+#headline {
+	width: 73%;
+	height:140px;
+	margin: 4px 0 0 0;
+	float: left;
+}
+#headline a {
+	position:relative;
+	display: inline-block;
+}
+#headline img {
+    width: 216px;
+    height: 138px;
+    border: solid 3px #37b00e;
+    margin-right: -3px;
+}
+#headline a span{
+	position: absolute;
+    top: 102px;
+    left: 3px;
+    width: 210px;
+    height: 33px;
+    padding: 3px 3px 3px 5px;
+    font-size: 0.88em;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #00adff;
+    opacity: 0.8;
+}
+#headline a:hover span,
+#headline a:hover img{
+    background-color: #ea981e;
+    opacity: 0.9;
+}
+div#header h1  {
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	font-size: 1em;
+	margin: -54px 0px 0px
+}
+div#header h1 a  {
+	color: #000000
+}
+div#header p#desc a  {
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #333399;
+	float: left;
+	margin: -15px 0px 0px
+}
+div#header p#desc a:hover  {
+	font-size: 1em;
+	font-weight: bold;
+	color: #3333ff;
+	float: left;
+	margin: -15px 0px 0px
+}
+div#rssf { 
+	float: right;
+	margin: -5px 0px 0px 0px
+}
+
+/* ナビゲーションバー */
+#nav  {
+	width: 1200px;
+	position:relative;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #333;
+	height: 40px;
+	background-color: #ffffff;
+	border-top: 1px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa; 
+	margin: auto;
+}
+#nav ul  {
+	margin: 0;
+	padding: 0;
+}
+#nav li  {
+	list-style-type: none;
+	float:left;
+}
+#nav li a  {
+	display: block;
+	width: 200px;
+	line-height: 270%;
+	border-right: solid 1px #aaaaaa;
+	color: #333;
+	text-align: center;
+	transition: all 0.3s ;
+}
+#nav li a:link {
+	text-decoration: none;
+}
+#nav li a:hover  {
+	background-color: #0a90b7;
+	color: #FFF;
+}
+#nav ul ul {
+	font-size: 1em;
+	font-weight: normal;
+	background-color: #ffffff;
+	display: none;
+	position: absolute;
+	border-top: 1px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	text-decoration: none;
+	-moz-opacity:0.85;
+	opacity:0.85;
+	z-index: 99999;
+	width: 170px}
+#nav ul ul.sub-menu :hover > a {
+	background:#eeffff;
+	text-decoration: none;
+	color: #333
+}
+#nav ul ul li {
+	min-width: 170px
+}
+#nav ul ul a {
+	width: 170px;
+	line-height: 40px;
+	border-top: 0px solid #aaaaaa;
+	border-left: 0px solid #aaaaaa;
+	border-right: 0px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+	color: #333;
+	text-align: center
+}
+#nav ul ul ul {   left: 100%;
+	top: 0
+}
+#nav ul li:hover > ul {display: block}
+
+/* 検索フォーム */
+div#subinfo {
+	width: 350px;
+	height:	40px;
+	position: absolute;
+	top: 30%;
+	bottom: 0;
+	left: 70%;
+	margin: auto;
+	text-align: right;
+}
+#searchform, #searchform div  {
+	display: inline;
+	margin: 0px 0px 0px 0px
+}
+#searchform label  {
+	display: none;
+	margin: 0px 0px 0px 0px
+}
+#searchform input#s {
+	border: solid 1px #aaaaaa;
+	border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px;
+    padding: 6px 8px 4px 10px;
+	font-size: 1em;
+}
+#searchform input#searchsubmit {
+	padding: 5px 8px 1px 8px;
+	margin-left:-5px;
+	background: #f1f1f1;
+	background: -webkit-linear-gradient(top,#fefefe 0%,#f1f1f1 100%);
+    background: -moz-linear-gradient(top,#fefefe 0%,#f1f1f1 100%);
+    background: -ms-linear-gradient(top,#fefefe 0%,#f1f1f1 100%);
+    background: -o-linear-gradient(top,#fefefe 0%,#f1f1f1 100%);
+    background: linear-gradient(top,#fefefe 0%,#f1f1f1 100%);
+	border: 1px solid #aaa;
+	border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+	font-weight: bold;
+}
+#s:hover, #s:focus  {
+	background-color: #eeeeee
+}
+#searchform input#searchsubmit :hover  {background-color: #aaaaaa}
+
+/* 検索結果 */
+/****************
+Header Style End
+****************/
+
+/***************
+ Single Style 
+***************/
+/* コンテンツ コンテナ */
+div#container  {
+	width: 1200px;
+	background-color: #FFFFFF;
+/*	margin: 10px 10px 10px 10px; 
+	padding: 10px 10px 10px 10px; */
+	border-top: 0px solid darkgray;
+	border-left: 1px solid darkgray;
+	border-right: 1px solid darkgray;
+	border-bottom: 1px solid darkgray;
+	margin: auto;
+	/* box-shadow: 2px 2px 5px #aabbaa;/* css3用記述 */
+	border-radius: 0px 0px 25px 25px / 0px 0px 13px 13px/* css3用記述 */
+}
+/* 記事見出しタイトル */
+#list-title{
+    width: 30%;
+	height:auto;
+	float:left;
+	overflow:hidden;
+}
+/* パンくずリスト */
+div#breadcrumb {
+	width:70%;
+	float:right;
+	line-height: 1.4;
+	overflow:hidden;
+}
+div#breadcrumb div  {
+	display: inline;
+	margin: 0 5px 0 0;
+	font-size: 1em;
+	float:right;
+}
+
+/* 左と中央カラム領域指定ボックス */
+div#main {  
+	width: 1200px;
+	margin: 10px 0 0 0;
+	text-align: left;
+	float:left;
+}
+
+/* 中央コンテンツ */
+div#content  {  
+	width: 735px;
+	float: left;
+	margin: 5px 3px;
+	//border: 2px solid #b3d999;
+}
+div#content_image  { 
+	width: 1200px;
+	float: right;
+	margin: 5px 5px 5px 5px
+}
+p.title  {
+	font-size: 1.4em;
+    font-weight: bold;
+    color: #585858;
+    width: auto;
+    padding: 2px 50px 0px 10px;
+    float: left;
+    background-image: url(../image/bar.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+/* ページネーション */
+p.pagenation  {
+	font-size: 1.2em;
+	margin: 0px 0 30px 0px;
+	overflow: hidden
+}
+span.oldpage  {
+	float: left;
+	margin: 0 0 0 10px;
+	padding: 4px 8px;
+    border: solid 1px #aaaaaa;
+}
+span.newpage  {
+	float: right;
+	margin: 0 10px 0 0;
+	padding: 4px 8px;
+    border: solid 1px #aaaaaa;
+}
+/* 中央アフィリエイト空間 */
+div#ad-space-center{
+	width:735;
+	height:90px;
+	margin-bottom: 10px;
+}
+
+/***************
+    Sidebar
+***************/
+li#recent-posts-2 {
+	font-size: 0.9em;
+    line-height: 1.4;
+}
+/* 左サイドバー */
+div#sidebar-left{
+	width:215px;
+	margin: 5px 6px 5px 8px;
+	padding:0;
+	float: left;
+}
+div#sidebar-left ul  {
+	width:215px;
+	padding: 0;
+	list-style-type: none
+}
+div#sidebar-left .widget  {
+	margin-bottom: 20px;
+}
+div#sidebar-left h2  {
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #55aa22;
+	border-radius: 3px;
+	padding: 2px 10px;
+	line-height:1.2;
+	margin: 0;
+}
+div#sidebar-left li li  {
+	font-size: 0.75em;
+	border-bottom: dotted 1px #aaaaaa;
+	margin: 0px 15px 0px 5px;
+}
+div#sidebar-left li li a  {color: #000000;
+	display: block;
+	padding: 5px 10px;
+}
+div#sidebar-left li li a:hover  {
+	background-color: #f7e29e;
+}
+
+/* 右サイドバー */
+div#sidebar-right {
+	width: 215px;
+	margin: 5px 8px 5px 6px;
+	float: left;
+}
+div#sidebar-right ul  {
+	width:215px;
+	padding: 0;
+	list-style-type: none;
+}
+div#sidebar-right .widget  {
+	margin-bottom: 20px;
+}
+div#sidebar-right h2  {
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #55aa22;
+	border-radius: 3px;
+	padding: 2px 10px;
+	line-height:1.2;
+	margin: 0;
+}
+div#sidebar-right li li  {
+	font-size: 0.95em;
+	border-bottom: dotted 1px #aaaaaa;
+}
+div#sidebar-right li li a  {
+	color: #000000;
+	display: block;
+    padding: 8px 0px 5px 5px;;
+}
+div#sidebar-right li li a:hover  {
+	background-color: #f7e29e;
+}
+
+/* アフィリエイト */
+div.textwidget {
+	margin-top:10px
+}
+
+/* ページ番号リンク */
+.tablenav {
+	padding: 0px 7px 2px 7px;
+	color: #2583ad;
+	background:white;
+	margin: 0em auto;
+	line-height:2em;
+	text-align:center;
+}
+a.page-numbers, .tablenav .current {
+	color: #00019b;
+	padding: 2px .4em;
+	border:solid 1px #ccc;
+	text-decoration:none;
+	font-size:0.9em;
+}
+a.page-numbers:hover {
+	color:white;
+	background: #328ab2;
+}
+.tablenav .current {
+	color: white;
+	background: #328ab2;
+	border-color: #328ab2;
+	font-weight:bold;
+}
+.tablenav .next, .tablenav .prev {
+	border:0 none;
+	background:transparent;
+	text-decoration:underline;
+	font-size:0.9em;
+	font-weight:bold;
+}
+#ue_page {
+	margin: 0px 0px -5px 0px;
+}
+
+/************
+   フッター 
+*************/
+div#footer  {
+	border-top: solid 1px #aaaaaa;
+	padding: 6px 0;
+	clear: both;
+}
+div#footer p  {
+	font-size: 0.75em;
+	text-align: center;
+	font-style: normal;
+	font-family: Verdana, sans-serif;
+	margin: 0;
+}
+

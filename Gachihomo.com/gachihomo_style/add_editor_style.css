@@ -1,8 +1,227 @@
-.mceContentBody {max-width: 720px}  /* 記事の幅 */
+@charset "utf-8";
+**************************/
 
-/* 基本 */
+/*****************
+  ビジュアルエディタの設定
+*****************/
 body  {
-	font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif
-  background-color: #FFFFFF;
-  background-repeat: repeat-x;
+	font-family: "メイリオ", 'Hiragino Kaku Gothic Pro', sans-serif;
+	background-color: #FFFFFF;
+	background-repeat: repeat-x;
+	width:690px;
+}
+
+
+/*****************
+  記事 content.php
+*****************/
+h2  {
+	background-image: url(image/chip.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	border-bottom: solid 2px #b3d999;
+	background-color: #ecffe9;
+	font-size: 1.5em;
+	/* font-weight:bold; */
+	padding: 10px 4px 10px 20px;
+	margin: 0;
+}
+h2 a  {
+	color: #000099;
+	margin: 0 0 0 5px;
+}
+h2 a:hover  {
+	background: #f7e29e;
+	padding: 2px 7px 2px 0px
+}
+h3 {	
+	width: 70%;
+	margin-bottom: 20px;
+	padding: 3px 0 3px 4px;
+    font-size: 1.5em;
+    border-left: 6px solid  #006400;
+    border-bottom: 2px solid  #006400;
+}
+h4 {
+    max-width: 20%;
+    margin: 15px 0 10px 10px;
+    padding: 5px 15px;
+    font-size: 1.3em;
+    border: 3px solid #2fa1a0;
+    border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+}
+p  {
+	font-size: 1.15em;
+	color: #555;
+	line-height: 1.7;
+	padding: 0 20px;
+}
+
+ul {
+	font-size: 1.2em;
+	line-height: 1.8;
+}
+
+
+/* 記事内の画像 */
+.aligncenter  {
+	max-width: 713px;
+    height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.aligncenter img {
+	max-width:98%;
+	height:auto;
+}
+.alignleft  {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px
+}
+.alignright  {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px
+}
+.wp-caption  {
+	border: solid 1px #aaaaaa;
+	text-align: center;
+	padding-top: 7px;
+}
+p.wp-caption-text {
+    margin: 3px 15px 3px 0px;
+}
+
+/* コメントフォーム */
+#comment_area {
+	width:100%;
+	height:auto;
+	margin-top: 40px;
+	border: 3px solid  #B3D999;
+	font-family:"メイリオ", 'Hiragino Kaku Gothic Pro', sans-serif;
+}
+#comment_area h3 {
+	width:100%;
+	font-size: 1.3em;
+	margin:0;
+	padding: 6px 0 5px 6px;
+	border-left: 6px solid  #006400;
+	border-bottom: 2px solid  #006400;
+}
+/* コメントリスト comment-list */
+#comment_area ol.comments-list{
+	padding: 20px 0 0px 30px;
+	margin-bottom:40px;
+	counter-reset: li;
+	list-style: none;
+}
+ol.comments-list li {
+	padding-bottom: 5px;
+}
+ol.comments-list > li:before {
+	content: counter(li) "：";
+	counter-increment: li;
+	float: left;
+}
+span.says{
+	display:none;
+}
+cite.fn {
+	color:#008000;
+	font-style:normal;
+	font-weight:bold;
+}
+div.comment-author.vcard {
+	float:left;
+	padding-right: 10px;
+} 
+#commentform {
+	padding: 25px 0 30px 20px;
+}
+#commentform textarea#comment {
+	width: 87%;
+	margin-left: 38px;
+}
+#commentform input#author {
+	margin-left: 10px;
+}
+#commentform p.form-submit {
+	margin: 20px 0 0 38px;
+}
+
+
+/************
+   フッター 
+*************/
+div#footer  {
+	border-top: solid 1px #aaaaaa;
+	padding: 6px 0;
+	clear: both;
+}
+div#footer p  {
+	font-size: 0.75em;
+	text-align: center;
+	font-style: normal;
+	font-family: Verdana, sans-serif;
+	margin: 0;
+}
+
+/**********************
+ 固定ページ・お問い合わせ
+***********************/
+.wpcf7-form {
+	background-color: #d4f8a5;
+	padding: 20px 20px 15px 0;
+	border-radius: 20px;
+}
+.wpcf7-form label {
+	width:100%;
+}
+.wpcf7-form span.req {
+	color: #aa0000; 
+	font-size: smaller;
+}
+.wpcf7-form .wpcf7-textarea {
+	width: 96%;
+}
+.wpcf7-form p.submit {
+	text-align: center;
+
+}
+.wpcf7-form .wpcf7-submit {
+	width: 200px;
+}
+
+
+/***************
+　　プラグイン
+***************/
+/* SNS共有ボタン */
+div.sharebtn {
+	width: 97%;
+    height: 30px;
+    margin: -15px auto 10px auto;
+    padding: 2px 5px 0px 2px;
+    background-color: #afeeee;
+}
+#sharebtn_bottom {
+	margin: 25px auto 10px auto;
+}
+.addtoany_list {
+	display:inline;
+}
+.addtoany_list a {
+    border: 0;
+    box-shadow: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 0 4px;
+    vertical-align: middle;
+	line-height: 0;
+}
+span.a2a_svg {
+	float: left;
+    display: inline-block;
 }

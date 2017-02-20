@@ -1,0 +1,34 @@
+/***************
+　　プラグイン
+***************/
+/* SNS共有ボタン */
+div.sharebtn {
+	width: 97%;
+    height: 30px;
+    margin: -15px auto 10px auto;
+    padding: 2px 5px 0px 2px;
+    background-color: #c7edf1;
+	border-radius: 15px;
+}
+#sharebtn_bottom {
+	margin: 25px auto 10px auto;
+}
+.addtoany_list {
+	display:inline;
+}
+.addtoany_list a {
+    border: 0;
+    box-shadow: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 0 4px;
+    vertical-align: middle;
+	line-height: 0;
+}
+span.a2a_svg {
+	float: left;
+    display: inline-block;
+}
+.a2a_button_facebook_like {
+	width : 68px !important;
+}

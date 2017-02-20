@@ -1,4 +1,4 @@
-<!-- 記事一覧トップ -->
+<!-- カテゴリー記事一覧 -->
 <div class="post">
 	<!-- 記事タイトル -->
 	<h2>
@@ -19,7 +19,8 @@
 		<a href="<?php the_permalink(); ?>">
 			<img src="<?php bloginfo('template_url'); ?>/image/no_image.png" alt="No Image" width="118" height="61" /></a>
 		<?php endif; ?>
-	</p>  
+	</p>
+	
 	<!-- 本文の表示　抜粋 FALSE= さらに... を削除 -->
 	<div id="caption">
 		<?php the_content('',FALSE,''); ?>
@@ -35,10 +36,6 @@
 		<div id="ad-space-post">
 			<div class="ad-separate">
 				<!-- ソース記述スペース -->
-			</div>
-			<!-- 広告二つ目 -->
-			<div class="ad-separate">
-				<!-- ソース記述スペース -->
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- ガチホモ速報アドセンスその４ -->
 				<ins class="adsbygoogle"
@@ -49,13 +46,17 @@
 					(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
 			</div>
+			<!-- 広告二つ目 -->
+			<div class="ad-separate">
+				<!-- ソース記述スペース -->				
+			</div>
 		</div>
 	<?php else : ?>
 		<p class="more"><a href="<?php the_permalink(); ?>">
 			<?php the_title(); ?> の続きを読む
 		</a></p>
 	<?php endif; ?>
-	
+
 	<!-- 文末情報表示欄 タグ&日時 -->
 	<div id="info">
 		<ul>
